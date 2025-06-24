@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Joyeux Anniversaire</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="background-blur"></div>
+  <header>
+    <h1>Joyeux Anniversaire <span class="prenom">Ursie</span> 🎉</h1>
+    <p class="subtitle">Que cette journée soit aussi belle et douce que toi !</p>
+  </header>
+  <main>
+    <section class="gallery-section">
+      <div class="carousel">
+        <img src="images/photo1.jpg" alt="Photo 1" class="carousel-img active" id="photo1" />
+        <img src="images/photo2.jpg" alt="Photo 2" class="carousel-img" id="photo2" />
+
+        <button class="carousel-btn prev">&#10094;</button>
+        <button class="carousel-btn next">&#10095;</button>
+      </div>
+    </section>
+
+    <section class="interactive-inspiration-section">
+      <h2 class="inspiration-title">🌸 Quelques mots pour illuminer ta journée 🌸</h2>
+
+      <!-- Introduction amicale ajoutée -->
+      <p style="max-width: 600px; margin: 0 auto 1.5em auto; font-family: 'Quicksand', Arial, sans-serif; font-size: 1.1rem; color: #a64ca6; text-align: center;">
+        Hey Ursie,<br />
+        Juste quelques mots pour te dire à quel point tu es précieuse.<br />
+        Que ces petites phrases t’apportent un sourire, un peu de douceur, et la force d’être toujours toi-même.<br />
+        Parce que le monde est plus joli avec toi dedans ! 🌟
+      </p>
+
+      <div class="interactive-inspiration-cards">
+        <div class="interactive-inspiration-card" data-index="0">
+          <blockquote class="interactive-quote" data-quote="Tu es plus forte que tu ne le crois, plus belle que tu ne le penses, et plus aimée que tu ne l'imagines."></blockquote>
+          <button class="reveal-btn">Voir le message secret</button>
+          <div class="secret-message">Je crois en toi. Ne lâche jamais ce feu qui t'habite. 🔥</div>
+        </div>
+        <div class="interactive-inspiration-card" data-index="1">
+          <blockquote class="interactive-quote" data-quote="Chaque jour avec toi est un cadeau. Continue d'être cette lumière pour les autres."></blockquote>
+          <button class="reveal-btn">Voir le message secret</button>
+          <div class="secret-message">Et aujourd'hui, j'espère te faire sourire un peu plus. 🎁</div>
+        </div>
+        <div class="interactive-inspiration-card" data-index="2">
+          <blockquote class="interactive-quote" data-quote="Ne doute jamais de ta valeur. Le monde est plus doux grâce à ton sourire."></blockquote>
+          <button class="reveal-btn">Voir le message secret</button>
+          <div class="secret-message">Tu es une merveille rare que j'ai la chance de connaître. 💖</div>
+        </div>
+      </div>
+    </section>
+    <button class="surprise-btn">Voir la surprise</button>
+    <div class="surprise-message hidden">
+      <p>✨ Tu es une femme exceptionnelle. Passe une journée magique, remplie de bonheur et d'amour ! ✨</p>
+      <div class="final-wish">Très belle journée à toi je t'aime! 🌸</div>
+    </div>
+    <!-- <div class="music-player">
+      <button class="music-toggle">🎵 Play / Pause</button>
+      <audio id="bg-music" src="/sounds/videoplayback (4).mp3"></audio>
+    </div> -->
+  </main>
+  <footer>
+    <p>Avec toute ma consideration i💕</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

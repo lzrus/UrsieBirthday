@@ -1,0 +1,472 @@
+/* Palette pastel : rose, lavande, doré, blanc */
+:root {
+  --rose: #f8bbd0;
+  --lavande: #e1bee7;
+  --dore: #ffe082;
+  --blanc: #fff;
+  --ombre: 0 4px 24px rgba(200, 150, 200, 0.15);
+}
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: 'Quicksand', Arial, sans-serif;
+  background: var(--rose);
+  min-height: 100vh;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.background-blur {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: url('images/photo1.jpg') center/cover no-repeat;
+  filter: blur(18px) brightness(0.7);
+  z-index: 0;
+  opacity: 0.5;
+  transition: opacity 1s;
+}
+
+header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem 1rem 1rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  color: var(--dore);
+  font-size: 2.5rem;
+  margin-bottom: 0.3em;
+  text-shadow: 0 2px 8px #e1bee7;
+}
+
+.prenom {
+  color: var(--rose);
+  background: var(--blanc);
+  padding: 0 0.5em;
+  border-radius: 1em;
+  box-shadow: var(--ombre);
+}
+
+.subtitle {
+  color: var(--lavande);
+  font-size: 1.2rem;
+  margin-bottom: 1.5em;
+}
+
+main {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.gallery-section {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto 2em auto;
+  padding: 0 1vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  height: 270px;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--blanc, #fff);
+  border-radius: 1.5em;
+  box-shadow: var(--ombre);
+  overflow: hidden;
+}
+
+.carousel-img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 1.2em;
+  box-shadow: 0 2px 16px rgba(200, 150, 200, 0.13);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 1s;
+  background: #f8bbd0;
+  display: block;
+}
+.carousel-img.active {
+  opacity: 1;
+  z-index: 1;
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--rose);
+  border: none;
+  color: var(--blanc);
+  font-size: 2rem;
+  border-radius: 50%;
+  width: 2.2em;
+  height: 2.2em;
+  box-shadow: var(--ombre);
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0.7;
+  transition: background 0.3s, opacity 0.3s;
+}
+.carousel-btn:hover {
+  background: var(--lavande);
+  opacity: 1;
+}
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
+
+.love-card-section {
+  margin: 2em 0 1em 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.love-card {
+  background: linear-gradient(135deg, var(--rose) 60%, var(--lavande) 100%);
+  border-radius: 1.5em;
+  box-shadow: var(--ombre);
+  padding: 1.5em 2em;
+  max-width: 350px;
+  text-align: center;
+  animation: fadeIn 2s;
+}
+.love-message {
+  font-family: 'Quicksand', Arial, sans-serif;
+  color: #a64ca6;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.surprise-btn {
+  margin: 2em 0 1em 0;
+  padding: 0.7em 1.2em;
+  font-size: 1.1rem;
+  font-family: 'Pacifico', cursive;
+  color: var(--blanc);
+  background: linear-gradient(90deg, var(--lavande), var(--rose));
+  border: none;
+  border-radius: 2em;
+  box-shadow: var(--ombre);
+  cursor: pointer;
+  transition: background 0.4s, transform 0.2s;
+  outline: none;
+  min-width: 120px;
+  max-width: 95vw;
+  word-break: break-word;
+}
+.surprise-btn:hover {
+  background: linear-gradient(90deg, var(--rose), var(--lavande));
+  transform: scale(1.07);
+}
+
+.surprise-message {
+  background: var(--blanc);
+  color: #a64ca6;
+  border-radius: 1.5em;
+  box-shadow: var(--ombre);
+  padding: 1.5em 2em;
+  max-width: 350px;
+  margin: 1em auto 2em auto;
+  text-align: center;
+  font-size: 1.1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s;
+}
+.surprise-message.visible {
+  opacity: 1;
+  pointer-events: auto;
+  animation: fadeIn 1.5s;
+}
+.final-wish {
+  margin-top: 1em;
+  font-family: 'Pacifico', cursive;
+  color: var(--dore);
+  font-size: 1.3rem;
+}
+
+.music-player {
+  display: flex;
+  justify-content: center;
+  margin: 2em 0 1em 0;
+}
+.music-toggle {
+  background: var(--lavande);
+  color: var(--rose);
+  border: none;
+  border-radius: 2em;
+  padding: 0.7em 1.2em;
+  font-size: 1.1rem;
+  font-family: 'Quicksand', Arial, sans-serif;
+  box-shadow: var(--ombre);
+  cursor: pointer;
+  transition: background 0.3s;
+  min-width: 120px;
+  max-width: 95vw;
+  word-break: break-word;
+}
+.music-toggle:hover {
+  background: var(--rose);
+  color: var(--lavande);
+}
+
+footer {
+  text-align: center;
+  color: var(--lavande);
+  font-size: 1rem;
+  margin-bottom: 1em;
+  z-index: 2;
+  position: relative;
+  padding: 0 0.5em;
+  word-break: break-word;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  h1 { font-size: 1.5rem; }
+  .gallery-section, .love-card, .surprise-message { max-width: 95vw; }
+  .carousel {
+    height: 170px;
+    max-width: 98vw;
+    border-radius: 1em;
+  }
+  .carousel-img {
+    border-radius: 1em;
+  }
+  .love-card, .surprise-message { padding: 1em 0.5em; }
+  .interactive-inspiration-section {
+    padding: 1.2em 0.2em 1.2em 0.2em;
+    border-radius: 1em;
+  }
+}
+
+/* Effets de cœurs/confettis (canvas ou pseudo-éléments, à compléter dans JS) */
+.confetti, .heart {
+  position: fixed;
+  pointer-events: none;
+  z-index: 100;
+  will-change: transform, opacity;
+}
+
+/* Section inspiration - citations */
+.inspiration-section {
+  background: #fde4ec;
+  padding: 2.5em 1em 2em 1em;
+  border-radius: 2em;
+  margin: 2em auto;
+  max-width: 900px;
+  box-shadow: 0 2px 24px rgba(255, 182, 193, 0.10);
+}
+.inspiration-title {
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  color: #d291bc;
+  font-size: 1.6rem;
+  margin-bottom: 2em;
+  letter-spacing: 0.02em;
+}
+.inspiration-cards {
+  display: flex;
+  gap: 1.5em;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+.inspiration-card {
+  background: var(--blanc, #fff);
+  border-radius: 1.5em;
+  box-shadow: 0 2px 16px rgba(200, 150, 200, 0.10);
+  padding: 1.5em 1.2em;
+  flex: 1 1 220px;
+  max-width: 280px;
+  min-width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.3s, transform 0.3s;
+  margin-bottom: 1em;
+}
+.inspiration-card blockquote {
+  font-family: 'Quicksand', Arial, sans-serif;
+  font-size: 1.08rem;
+  color: #a64ca6;
+  text-align: center;
+  margin: 0;
+  line-height: 1.5;
+}
+.inspiration-card:hover {
+  box-shadow: 0 8px 32px rgba(200, 150, 200, 0.22);
+  transform: translateY(-8px) scale(1.03);
+  background: #fff8fb;
+}
+@media (max-width: 800px) {
+  .inspiration-cards {
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+  }
+  .inspiration-card {
+    max-width: 95vw;
+    width: 100%;
+  }
+}
+
+/* Section citations interactives */
+.interactive-inspiration-section {
+  background: #fff0f5;
+  padding: 2.5em 1em 2em 1em;
+  border-radius: 2em;
+  margin: 2em auto;
+  max-width: 900px;
+  box-shadow: 0 2px 24px rgba(255, 182, 193, 0.10);
+}
+.interactive-inspiration-cards {
+  display: flex;
+  gap: 1.2em;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+.interactive-inspiration-card {
+  background: var(--blanc, #fff);
+  border-radius: 1.5em;
+  box-shadow: 0 2px 16px rgba(200, 150, 200, 0.10);
+  padding: 1.7em 1.2em 1.2em 1.2em;
+  flex: 1 1 220px;
+  min-width: 0;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto 1em auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition: box-shadow 0.3s, transform 0.3s;
+  cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+}
+.interactive-inspiration-card:hover {
+  box-shadow: 0 8px 32px rgba(200, 150, 200, 0.22);
+  transform: translateY(-8px) scale(1.03);
+  background: #fff8fb;
+}
+.interactive-quote {
+  font-family: 'Quicksand', Arial, sans-serif;
+  font-size: 1.08rem;
+  color: #a64ca6;
+  text-align: center;
+  margin: 0 0 1em 0;
+  line-height: 1.5;
+  font-style: italic;
+  min-height: 3.2em;
+  letter-spacing: 0.01em;
+}
+.reveal-btn {
+  background: #fde4ec;
+  color: #a64ca6;
+  border: none;
+  border-radius: 1em;
+  padding: 0.4em 1.2em;
+  font-size: 0.98rem;
+  font-family: 'Quicksand', Arial, sans-serif;
+  box-shadow: 0 1px 6px rgba(200, 150, 200, 0.08);
+  cursor: pointer;
+  margin-bottom: 0.7em;
+  transition: background 0.2s, color 0.2s;
+  outline: none;
+  opacity: 0.85;
+}
+.reveal-btn:hover {
+  background: #f8bbd0;
+  color: #fff;
+  opacity: 1;
+}
+.secret-message {
+  display: none;
+  font-family: 'Pacifico', cursive;
+  color: #d291bc;
+  font-size: 1.08rem;
+  text-align: center;
+  margin-top: 0.5em;
+  animation: fadeIn 1s;
+}
+.interactive-inspiration-card.revealed .secret-message {
+  display: block;
+}
+@media (max-width: 800px) {
+  .interactive-inspiration-cards {
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+  }
+  .interactive-inspiration-card {
+    max-width: 95vw;
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+/* Textes et citations */
+.inspiration-title, .interactive-quote, .secret-message, .love-message, .subtitle {
+  text-align: center;
+  word-break: break-word;
+}
+.interactive-quote, .secret-message {
+  font-size: 1.08rem;
+  padding: 0 0.2em;
+}
+@media (max-width: 600px) {
+  .inspiration-title {
+    font-size: 1.1rem;
+    padding: 0 0.2em;
+  }
+  .interactive-quote, .secret-message {
+    font-size: 0.98rem;
+  }
+}
+
+/* Empêche tout débordement horizontal */
+* {
+  box-sizing: border-box;
+} 
+
+#photo1,
+#photo2 {
+  object-position: center 10%; /* Affiche le haut de l’image */
+}
